@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web s Menu</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .dropdown-item:hover { background-color: blue; }
+        .dropdown-menu { transform: translateX(-80%); }
+		.container .row .col-md-6 { padding: 10px; /* Přidává padding kolem každého obrázku */ }
+        img.img-fluid { width: 100%; /* Zajistí, že obrázky jsou plně responzivní */
+		height: auto; /* Udržuje původní poměr stran obrázků */  }
+    </style>
+<body class="bg-dark text-white">
+    <div id="navbar"></div> <!-- Prázdný div pro menu -->
+
+    <!-- Obsah stránky -->
+	
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+
+            <div class="col-md-6 text-center">
+                <img src="e2d0ccb3-5d2d-4c7c-861e-8e198b45ac1b.jfif" alt="Náhodný obrázek" class="img-fluid">
+            </div>
+            <div class="col-md-6 text-center">
+                <img src="auto.PNG" alt="Náhodný obrázek" class="img-fluid">
+            </div>
+
+        </div>
+    </div>
+    <p>radio.setGroup(28)
+
+        let strip = neopixel.create(DigitalPin.P0, 8, NeoPixelMode.RGB)
+        
+        enum Pins {
+            wr = DigitalPin.P8,
+            wl = DigitalPin.P12,
+            r = DigitalPin.P13,
+            l = DigitalPin.P14,
+            c = DigitalPin.P15,
+            trig = DigitalPin.P2,
+            echo = DigitalPin.P1
+        }
+        
+        let center = pins.digitalReadPin(DigitalPin.P15)
+        let left = pins.digitalReadPin(DigitalPin.P14)
+        let right = pins.digitalReadPin(DigitalPin.P13)
+        
+        basic.forever(function() {
+            center = pins.digitalReadPin(DigitalPin.P15)
+            left = pins.digitalReadPin(DigitalPin.P14)
+            right = pins.digitalReadPin(DigitalPin.P13)
+        
+            if (left === 0 && center === 1 && right === 0) {
+                PCAmotor.MotorRun(PCAmotor.Motors.M1, 162) //162 100
+                PCAmotor.MotorRun(PCAmotor.Motors.M4, -255) //-255 -175
+            } else if (left === 1 && center === 1 && right === 0) {
+                PCAmotor.MotorRun(PCAmotor.Motors.M1, 100)
+                PCAmotor.MotorRun(PCAmotor.Motors.M4, -255)
+            } else if (left === 0 && center === 1 && right === 1) {
+                PCAmotor.MotorRun(PCAmotor.Motors.M1, 162)
+                PCAmotor.MotorRun(PCAmotor.Motors.M4, -175)
+            } else if (left === 1 && center === 0 && right === 0) {
+                PCAmotor.MotorRun(PCAmotor.Motors.M1, 0)
+                PCAmotor.MotorRun(PCAmotor.Motors.M4, -255)
+            } else if (left === 0 && center === 0 && right === 1) {
+                PCAmotor.MotorRun(PCAmotor.Motors.M1, 162)
+                PCAmotor.MotorRun(PCAmotor.Motors.M4, 0)
+            } else if (left === 0 && center === 0 && right === 0) {
+                PCAmotor.MotorRun(PCAmotor.Motors.M1, 100)
+                PCAmotor.MotorRun(PCAmotor.Motors.M4, -175)
+            } else if (left === 1 && center === 1 && right === 1) {
+                PCAmotor.MotorRun(PCAmotor.Motors.M1, 162)
+                PCAmotor.MotorRun(PCAmotor.Motors.M4, -255)
+            } else {
+                PCAmotor.MotorRun(PCAmotor.Motors.M1, 0)
+                PCAmotor.MotorRun(PCAmotor.Motors.M4, 0)
+            }
+            
+        })
+        
+        //kdyz sviti je 0 - na modrem, nebo bilem
+        //kdyz nesviti je 1 - na cernem</p>
+    <!-- Konec obsahu stránky -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="menu3.txt"></script> <!-- Vložení JavaScriptu pro menu -->
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
